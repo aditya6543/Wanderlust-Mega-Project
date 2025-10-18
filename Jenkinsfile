@@ -1,6 +1,5 @@
 @Library('Shared') _
 pipeline {
-    agent {label 'Node'}
     
     environment{
         SONAR_HOME = tool "Sonar"
@@ -32,7 +31,7 @@ pipeline {
         stage('Git: Code Checkout') {
             steps {
                 script{
-                    code_checkout("https://github.com/LondheShubham153/Wanderlust-Mega-Project.git","main")
+                    code_checkout("https://github.com/aditya6543/Wanderlust-Mega-Project.git","main")
                 }
             }
         }
