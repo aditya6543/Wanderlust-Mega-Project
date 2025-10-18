@@ -479,7 +479,7 @@ kubectl get svc -n prometheus
 > change it from Cluster IP to NodePort after changing make sure you save the file and open the assigned nodeport to the service.
 
 ```bash
-kubectl edit svc stable-kube-prometheus-sta-prometheus -n prometheus
+kubectl edit svc prometheus-kube-prometheus-prometheus -n prometheus
 ```
 ![image](https://github.com/user-attachments/assets/90f5dc11-23de-457d-bbcb-944da350152e)
 ![image](https://github.com/user-attachments/assets/ed94f40f-c1f9-4f50-a340-a68594856cc7)
@@ -493,7 +493,7 @@ kubectl get svc -n prometheus
 #
 - Now,let’s change the SVC file of the Grafana and expose it to the outer world
 ```bash
-kubectl edit svc stable-grafana -n prometheus
+kubectl edit svc prometheus-grafana -n prometheus
 ```
 ![image](https://github.com/user-attachments/assets/4a2afc1f-deba-48da-831e-49a63e1a8fb6)
 
@@ -506,7 +506,7 @@ kubectl get svc -n prometheus
 #
 - Get a password for grafana
 ```bash
-kubectl get secret --namespace prometheus stable-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+ kubectl get secret --namespace prometheus prometheus-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 ```
 > [!Note]
 > Username: admin
